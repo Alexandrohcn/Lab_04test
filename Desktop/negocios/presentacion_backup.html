@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<div class="source-header">
+    <span class="source-name">EIA & Yahoo Finance</span>
+    <span class="source-badge official">Oficial</span>
+</div>
+<p class="source-desc">Precios históricos WTI y Brent</p>
+<code>CL=F, BZ=F (5 años)</code>
+</div>
+<div class="source-item">
+    <div class="source-header">
+        <span class="source-name">Acciones Petroleras</span>
+        <span class="source-badge free">Gratis</span>
+    </div>
+    <p class="source-desc">9 empresas USA + 4 Peruanas (BVL)</p>
+    <code>XOM, CVX, SCCO, BVN...</code>
+</div>
+</div>
+
+<div class="source-category">
+    <h3>📰 Noticias y Sentimiento</h3>
+    <div class="source-item">
+        <div class="source-header">
+            <span class="source-name">Reuters / Bloomberg</span>
+            <span class="source-badge official">Histórico</span>
+        </div>
+        <p class="source-desc">Dataset de Noticias Financieras</p>
+        <code>2019 - 2024 (Archivo)</code>
+    </div>
+</div>
+
+<div class="source-category">
+    <h3>👥 Usuarios y Big Data</h3>
+    <div class="source-item">
+        <div class="source-header">
+            <span class="source-name">Clientes Peruanos</span>
+            <span class="source-badge simulated">Simulado</span>
+        </div>
+        <p class="source-desc">1,000 perfiles de inversores</p>
+        <code>Lima, Arequipa, Cusco...</code>
+    </div>
+    <div class="source-item">
+        <div class="source-header">
+            <span class="source-name">Interacciones</span>
+            <span class="source-badge bigdata">Big Data</span>
+        </div>
+        <p class="source-desc">20 Millones de registros</p>
+        <code>CSV ~400 MB</code>
+    </div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Slide 4: Gráfica WTI -->
+<section class="slide" data-slide="3">
+    <div class="slide-content">
+        <h2 class="slide-title">Tendencia Histórica del WTI (Datos Reales)</h2>
+        <div class="chart-container">
+            <div class="chart-info">
+                <div class="info-badge">
+                    <span class="badge-label">Fuente:</span>
+                    <span class="badge-value">EIA + Yahoo Finance</span>
+                </div>
+                <div class="info-badge">
+                    <span class="badge-label">Período:</span>
+                    <span class="badge-value">2019 - 2024</span>
+                </div>
+            </div>
+
+            <div class="price-chart">
+                <div class="chart-y-axis">
+                    <span>$100</span>
+                    <span>$80</span>
+                    <span>$60</span>
+                    <span>$40</span>
+                    <span>$20</span>
+                </div>
+                <div class="chart-area">
+                    <svg viewBox="0 0 800 300" class="chart-svg">
+                        <polyline fill="none" stroke="url(#gradient)" stroke-width="3" points="
+                                        0,135 40,120 80,110 120,105 133,240 160,156 200,144 
+                                        240,120 280,90 320,60 360,75 400,66 440,78 480,90 
+                                        520,84 560,72 600,78 640,96 680,102 720,96 760,102 800,96
+                                        " />
+                        <polygon fill="url(#areaGradient)" opacity="0.3" points="
+                                        0,300 0,135 40,120 80,110 120,105 133,240 160,156 200,144 
+                                        240,120 280,90 320,60 360,75 400,66 440,78 480,90 
+                                        520,84 560,72 600,78 640,96 680,102 720,96 760,102 800,96 800,300
+                                        " />
+                        <circle cx="133" cy="240" r="6" fill="#ef4444" opacity="0.8">
+                            <animate attributeName="r" values="6;8;6" dur="2s" repeatCount="indefinite" />
+                        </circle>
+                        <circle cx="320" cy="60" r="6" fill="#f59e0b" opacity="0.8">
+                            <animate attributeName="r" values="6;8;6" dur="2s" repeatCount="indefinite" />
+                        </circle>
+                        <defs>
+                            <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#7c3aed;stop-opacity:1" />
+                            </linearGradient>
+                            <linearGradient id="areaGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:0.5" />
+                                <stop offset="100%" style="stop-color:#7c3aed;stop-opacity:0.1" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <div class="chart-x-axis">
+                    <span>2019</span>
+                    <span>2020</span>
+                    <span>2021</span>
+                    <span>2022</span>
+                    <span>2023</span>
+                    <span>2024</span>
+                </div>
+            </div>
+
+            <div class="chart-insights">
+                <div class="insight-box">
+                    <div class="insight-icon">📉</div>
+                    <div class="insight-content">
+                        <strong>COVID-19 (2020)</strong>
+                        <p>Caída histórica</p>
+                    </div>
+                </div>
+                <div class="insight-box">
+                    <div class="insight-icon">📈</div>
+                    <div class="insight-content">
+                        <strong>Guerra (2022)</strong>
+                        <p>Pico de precios</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 5: Prophet + VADER -->
+<section class="slide" data-slide="4">
+    <div class="slide-content">
+        <h2 class="slide-title">Predicción + Análisis Sentimental</h2>
+        <div class="two-column">
+            <div class="column">
+                <div class="info-card">
+                    <h3>📊 Prophet: Predicción</h3>
+                    <p>Modelo de Facebook para series temporales</p>
+                    <div class="simple-list">
+                        <div class="list-item">
+                            <span class="item-icon">✅</span>
+                            <span>Detecta tendencias</span>
+                        </div>
+                        <div class="list-item">
+                            <span class="item-icon">✅</span>
+                            <span>Predice 30 días</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="info-card">
+                    <h3>📰 VADER: Sentimiento</h3>
+                    <p>Analiza impacto de noticias históricas</p>
+                    <div class="sentiment-examples">
+                        <div class="sentiment-item positive">
+                            <div class="sentiment-text">"OPEP reduce producción (2023)"</div>
+                            <div class="sentiment-score">+0.65 😊</div>
+                        </div>
+                        <div class="sentiment-item negative">
+                            <div class="sentiment-text">"Inventarios aumentan (2020)"</div>
+                            <div class="sentiment-score">-0.42 😟</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 6: El Motor de Recomendación (Técnico) -->
+<section class="slide" data-slide="5">
+    <div class="slide-content">
+        <h2 class="slide-title">El Motor de Recomendación (Spark Engine)</h2>
+        <div class="engine-layout">
+            <div class="engine-input">
+                <div class="input-box">
+                    <div class="input-icon">👥</div>
+                    <h4>Perfiles</h4>
+                    <p>Clientes Peruanos</p>
+                    <span class="badge-mini">CSV</span>
+                </div>
+                <div class="input-plus">+</div>
+                <div class="input-box">
+                    <div class="input-icon">📊</div>
+                    <h4>Interacciones</h4>
+                    <p>Historial</p>
+                    <span class="badge-mini">20M Big Data</span>
+                </div>
+            </div>
+
+            <div class="engine-process">
+                <div class="spark-logo">⚡ Apache Spark</div>
+                <div class="process-steps">
+                    <div class="p-step">1. Filtrado Colaborativo (ALS)</div>
+                    <div class="p-step">2. Validación (RMSE: 0.85)</div>
+                    <div class="p-step">3. Cruce con Señal de Mercado</div>
+                </div>
+            </div>
+
+            <div class="engine-output">
+                <div class="output-box">
+                    <div class="output-icon">🎯</div>
+                    <h4>Recomendación</h4>
+                    <p>Top 5 Activos</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="logic-explanation">
+            <h3>🧠 Validación y Lógica:</h3>
+            <div class="logic-grid">
+                <div class="logic-item">
+                    <span class="logic-cond">Entrenamiento 🏋️</span>
+                    <span class="logic-arrow">→</span>
+                    <span class="logic-result">80% Train / 20% Test (Validación Cruzada)</span>
+                </div>
+                <div class="logic-item">
+                    <span class="logic-cond">Si Petróleo SUBE 📈</span>
+                    <span class="logic-arrow">→</span>
+                    <span class="logic-result">Recomendar Petroleras (XOM, OXY)</span>
+                </div>
+                <div class="logic-item">
+                    <span class="logic-cond">Si Cliente PERUANO 🇵🇪</span>
+                    <span class="logic-arrow">→</span>
+                    <span class="logic-result">Priorizar BVL (SCCO, BVN)</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 7: Caso de Uso Real (NUEVO) -->
+<section class="slide" data-slide="6">
+    <div class="slide-content">
+        <h2 class="slide-title">Caso de Uso: Inversionista Peruano</h2>
+        <div class="use-case-container">
+            <!-- Perfil del Cliente -->
+            <div class="client-profile-card">
+                <div class="profile-header">
+                    <div class="profile-avatar">👤</div>
+                    <div class="profile-info">
+                        <h3>Carlos Rodríguez</h3>
+                        <p>📍 Arequipa, Perú</p>
+                    </div>
+                </div>
+                <div class="profile-details">
+                    <div class="detail-row">
+                        <span>Perfil:</span>
+                        <span class="tag aggressive">Agresivo</span>
+                    </div>
+                    <div class="detail-row">
+                        <span>Capital:</span>
+                        <span>$25,000 USD</span>
+                    </div>
+                    <div class="detail-row">
+                        <span>Objetivo:</span>
+                        <span>Alto Crecimiento</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contexto de Mercado -->
+            <div class="market-context-arrow">
+                <div class="context-bubble">
+                    <span class="signal-icon">🚀</span>
+                    <div>
+                        <strong>Señal Detectada</strong>
+                        <span class="signal-text">FUERTEMENTE BULLISH</span>
+                    </div>
+                </div>
+                <div class="arrow-line"></div>
+            </div>
+
+            <!-- Recomendaciones -->
+            <div class="recommendations-card">
+                <h3>🎯 Portafolio Recomendado</h3>
+                <div class="rec-list">
+                    <div class="rec-item highlight">
+                        <div class="rec-ticker">OXY</div>
+                        <div class="rec-name">Occidental Petroleum</div>
+                        <div class="rec-reason">Alta correlación con subida de petróleo</div>
+                        <div class="rec-score">★ 4.8</div>
+                    </div>
+                    <div class="rec-item">
+                        <div class="rec-ticker">SCCO</div>
+                        <div class="rec-name">Southern Copper (Perú)</div>
+                        <div class="rec-reason">Commodities en alza + Dividendo</div>
+                        <div class="rec-score">★ 4.5</div>
+                    </div>
+                    <div class="rec-item">
+                        <div class="rec-ticker">XOM</div>
+                        <div class="rec-name">ExxonMobil</div>
+                        <div class="rec-reason">Estabilidad y crecimiento</div>
+                        <div class="rec-score">★ 4.2</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 8: Conclusión -->
+<section class="slide" data-slide="7">
+    <div class="slide-content">
+        <h2 class="slide-title">Conclusión del Sistema</h2>
+        <div class="conclusion-layout">
+            <div class="conclusion-main">
+                <div class="integration-simple">
+                    <div class="integration-item">
+                        <div class="int-icon">📊</div>
+                        <div class="int-label">Predicción</div>
+                        <div class="int-value">Prophet</div>
+                    </div>
+                    <div class="int-plus">+</div>
+                    <div class="integration-item">
+                        <div class="int-icon">📰</div>
+                        <div class="int-label">Sentimiento</div>
+                        <div class="int-value">VADER</div>
+                    </div>
+                    <div class="int-plus">+</div>
+                    <div class="integration-item">
+                        <div class="int-icon">⚡</div>
+                        <div class="int-label">Big Data</div>
+                        <div class="int-value">Spark</div>
+                    </div>
+                    <div class="int-equals">=</div>
+                    <div class="integration-item signal-item">
+                        <div class="int-icon">🎯</div>
+                        <div class="int-label">Sistema</div>
+                        <div class="int-value bullish">Inteligente</div>
+                    </div>
+                </div>
+
+                <div class="signal-explanation">
+                    <h3>Valor Agregado</h3>
+                    <ul class="achievements">
+                        <li>✅ <strong>Personalización:</strong> Recomendaciones únicas por perfil</li>
+                        <li>✅ <strong>Datos Reales:</strong> Base de datos CSV con empresas peruanas</li>
+                        <li>✅ <strong>Escalabilidad:</strong> Procesa 20 millones de registros</li>
+                        <li>✅ <strong>Inteligencia:</strong> Combina ML + Sentimiento + Reglas</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="conclusion-side">
+                <div class="final-message">
+                    <h3>¡Gracias!</h3>
+                    <p class="author-name">Alexandro Henry Cano Narváez</p>
+                    <p class="contact">Sistema Inteligente de Análisis de Petróleo</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</div>
+</div>
+
+<script src="script.js"></script>
+</body>
+
+</html>
